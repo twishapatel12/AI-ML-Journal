@@ -2,15 +2,6 @@
 
 # Supervised vs Unsupervised Learning
 
-**A Technical Beginner’s Guide by Twisha Patel**
-
-<p align="center">
-  <img src="https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/twisha-patel-logo.png" alt="Twisha Patel Logo" width="100"/>
-</p>
-<p align="center">
-  Created and maintained by Twisha Patel
-</p>
-
 ---
 
 ## Introduction
