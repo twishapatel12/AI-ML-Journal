@@ -31,8 +31,7 @@ Below are examples of real MLOps lifecycles and workflows used in production env
 
 Visualizes experiment workflows, automated pipelines, CI/CD stages, and prediction serving in an MLOps system.
 
-![Simplified MLOps Pipeline](https://ml-ops.org/images/mlops-principles-diagram.png)  
-*Source: [ml-ops.org](https://ml-ops.org/content/mlops-principles)*
+![Simplified MLOps Pipeline](https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/mlops-principles-diagram.jpg)  
 
 ---
 
