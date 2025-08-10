@@ -6,141 +6,98 @@
 
 ## Introduction
 
-Machine Learning Operations (**MLOps**) is a set of practices and tools for deploying, managing, and maintaining machine learning models in real-world environments.  
-It brings together the best practices from **machine learning**, **software engineering**, and **DevOps** (development + operations).
+Machine Learning Operations (**MLOps**) bridges the gap between developing ML models and deploying them reliably in real-world systems. It blends best practices from **machine learning**, **DevOps**, and **software engineering** to automate, monitor, and manage ML workflows.
 
-**Why is MLOps important?**  
-Building a good ML model is just the start—real business impact comes from putting that model into production, monitoring it, and updating it as data and requirements change.
+Effective MLOps ensures that ML models are scalable, maintainable, and aligned with evolving data and business needs.
 
 ---
 
 ## What Problems Does MLOps Solve?
 
-- Moving models from research (Jupyter notebooks) to real applications (websites, mobile apps, APIs)
-- Keeping track of different model versions and experiments
-- Automating data pipelines and retraining
-- Monitoring models for accuracy, bias, and drift
-- Collaboration between data scientists, engineers, and business teams
+- Scaling models from notebooks to production environments
+- Versioning of code, data, and models
+- Automating pipelines for data, training, and evaluation
+- Monitoring models in production for drift, bias, or failure
+- Establishing CI/CD for model lifecycle
 
 ---
 
-## Key Components of MLOps
+## Real-World Diagrams of MLOps Workflows
 
-1. **Version Control:**  
-   Track code, data, and model changes (like using Git for code).
 
-2. **Automated Data Pipelines:**  
-   Automate data cleaning, transformation, and validation.
+::contentReference[oaicite:1]{index=1}
 
-3. **Model Training and Experiment Tracking:**  
-   Keep records of experiments, parameters, and results (e.g., MLflow, Weights & Biases).
 
-4. **Model Deployment:**  
-   Serve models as APIs or within applications, so others can use them.
+1. **Simplified MLOps Pipeline**  
+   Visualizes experiment workflows, automated pipelines, CI/CD stages, and prediction serving in an MLOps system :contentReference[oaicite:2]{index=2}.
 
-5. **Model Monitoring:**  
-   Track model performance, data drift, and errors in production.
+2. **Automated MLOps Pipeline Overview**  
+   Highlights stages like data preparation, model training, validation, and governance within a modular pipeline :contentReference[oaicite:3]{index=3}.
 
-6. **Continuous Integration/Continuous Deployment (CI/CD):**  
-   Automatically test and deploy updated models just like software code.
+3. **MLOps Phases (ML + Dev + Ops)**  
+   Illustrates how machine learning, development, and operations integrate in ML workflows with tools like Git, CI platforms, and model registries :contentReference[oaicite:4]{index=4}.
 
----
+4. **Azure MLOps Deployment Flow**  
+   Shows CI (build & test), CD (deploy pipelines), and model-serving steps in Azure’s MLOps architecture :contentReference[oaicite:5]{index=5}.
 
-## The MLOps Lifecycle
-
-MLOps turns model development into a repeatable, automated loop:
-
-<p align="center">
-  <img src="https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/mlops-lifecycle-diagram.png" alt="MLOps Lifecycle Diagram" width="520"/>
-</p>
-
-1. **Data Ingestion and Validation**
-2. **Data Processing**
-3. **Model Training**
-4. **Model Validation**
-5. **Model Deployment**
-6. **Model Monitoring**
-7. **Feedback & Retraining**
-
-Each stage is automated as much as possible for speed, reproducibility, and quality.
+These industry-standard visuals reinforce how MLOps streamlines each step—from data to deployment and monitoring.
 
 ---
 
-## Example: MLOps in Action
+## Core Components of MLOps
 
-Imagine an e-commerce site that predicts product recommendations:
-
-- Data pipeline ingests new user data daily.
-- Model is retrained weekly with latest purchases.
-- Model is deployed as an API.
-- Monitoring checks if recommendations drop in accuracy.
-- When accuracy drops, retraining is triggered automatically.
+1. **Version Control**: Use Git for code, DVC for datasets and model checkpoints.
+2. **Data Pipelines**: Automate ingestion, cleaning, and transformation.
+3. **Experiment Tracking**: Log parameters, metrics, and artifacts (e.g. MLflow, Weights & Biases).
+4. **Model Registry**: Centralized model versioning and metadata storage.
+5. **Deployment**: Package models into REST APIs or serve via containers and platforms (Docker, Flask, Kubernetes, FastAPI).
+6. **Monitoring**: Track model metrics, detect drift, manage rollback or retraining.
+7. **CI/CD for ML**: Automated testing & deployment of models like software features.
 
 ---
 
-## Code Example: Deploying a Model with FastAPI
-
-A very simple REST API for a trained model (serving predictions):
+## Example: Minimal Model Serving with FastAPI
 
 ```python
+# file: serve_model.py
 from fastapi import FastAPI
 import joblib
 import numpy as np
 
 app = FastAPI()
-model = joblib.load('model.pkl')  # Load your trained model
+model = joblib.load('house_price_model.pkl')
 
 @app.get("/predict")
 def predict(size: float, rooms: int):
-    X_new = np.array([[size, rooms]])
-    pred = model.predict(X_new)
-    return {"predicted_price": float(pred[0])}
+    features = np.array([[size, rooms]])
+    price = model.predict(features)
+    return {"predicted_price": float(price[0])}
 ````
+
+This simple endpoint demonstrates how a trained model can be served and accessed via REST.
 
 ---
 
-## Common MLOps Tools
+## MLOps Tools Ecosystem
 
-| Stage               | Tools/Libraries                                        |
+| Pipeline Stage      | Example Tools & Libraries                              |
 | ------------------- | ------------------------------------------------------ |
-| Version Control     | Git, DVC (Data Version Control)                        |
+| Versioning          | Git, DVC                                               |
 | Data Pipelines      | Apache Airflow, Prefect, Kubeflow                      |
-| Experiment Tracking | MLflow, Weights & Biases, Neptune.ai                   |
-| Model Deployment    | Docker, FastAPI, Flask, TensorFlow Serving, TorchServe |
+| Experiment Tracking | MLflow, Weights & Biases                               |
+| Model Registry      | MLflow, AWS SageMaker Model Registry                   |
+| Deployment          | Docker, FastAPI, TensorFlow Serving, TorchServe, Flask |
 | Monitoring          | Prometheus, Grafana, Seldon Core                       |
 | CI/CD               | GitHub Actions, Jenkins, GitLab CI                     |
 
 ---
 
-## Visual: MLOps Workflow
+## Further Reading & References
 
-<p align="center">
-  <img src="https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/mlops-workflow-diagram.png" alt="MLOps Workflow Diagram" width="520"/>
-</p>
-
-**Figure:**
-The MLOps workflow connects data, training, deployment, and monitoring in a cycle to keep ML solutions working and improving.
-
----
-
-## Best Practices in MLOps
-
-* **Automate as much as possible** (testing, deployment, monitoring)
-* **Track everything:** code, data, experiments, model versions
-* **Keep code and data versioned together**
-* **Use containers** (like Docker) for reproducible deployments
-* **Monitor in production** for model accuracy, data drift, and system health
-* **Collaborate:** Keep communication open between data science, engineering, and product teams
-
----
-
-## Further Reading and References
-
-* [Google Cloud: MLOps Guide](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning)
-* [Microsoft: What is MLOps?](https://learn.microsoft.com/en-us/azure/machine-learning/concept-model-management-and-deployment)
-* [Databricks: MLOps Best Practices](https://www.databricks.com/solutions/mlops)
-* [MLflow Documentation](https://mlflow.org/docs/latest/index.html)
-* [DVC Documentation](https://dvc.org/doc)
+* [GeeksforGeeks: MLOps Pipeline Components](https://www.geeksforgeeks.org/machine-learning/mlops-pipeline-implementing-efficient-machine-learning-operations/) ([GeeksforGeeks][1], [ML Ops][2])
+* [Baeldung: Navigating MLOps Workflow](https://www.baeldung.com/ops/machine-learning-ops) ([baeldung.com][3])
+* [Google Cloud: CI/CD and Continuous Training in MLOps](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning) ([Google Cloud][4])
+* [Azure MLOps v2 Architecture Components](https://github.com/Azure/mlops-v2/blob/main/documentation/architecture/README.md) ([GitHub][5])
 
 ---
 
@@ -152,3 +109,11 @@ The MLOps workflow connects data, training, deployment, and monitoring in a cycl
   <br>
   <a href="https://github.com/twishapatel12/AI-ML-Journal">GitHub Repo</a>
 </p>
+
+---
+
+[1]: https://www.geeksforgeeks.org/machine-learning/mlops-pipeline-implementing-efficient-machine-learning-operations/?utm_source=chatgpt.com "MLOps Pipeline: Implementing Efficient Machine Learning Operations"
+[2]: https://ml-ops.org/content/mlops-principles?utm_source=chatgpt.com "MLOps Principles"
+[3]: https://www.baeldung.com/ops/machine-learning-ops?utm_source=chatgpt.com "Navigating MLOps: Key Strategies for Effective Machine ... - Baeldung"
+[4]: https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning?utm_source=chatgpt.com "MLOps: Continuous delivery and automation pipelines in machine learning ..."
+[5]: https://github.com/Azure/mlops-v2/blob/main/documentation/architecture/README.md?utm_source=chatgpt.com "mlops-v2/documentation/architecture/README.md at main · Azure ... - GitHub"
