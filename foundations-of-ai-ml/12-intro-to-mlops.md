@@ -27,7 +27,9 @@ Let’s see how MLOps works in the real world with visuals:
 
 ### 1. Simplified MLOps Pipeline
 
-![Simplified-Mlops-Diagram][https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/simplified-mlops-diagram.jpg]
+<p align="center">
+  <img src="https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/simplified-mlops-diagram.jpg" alt="CI/CD and ML Pipeline" width="600"/>
+</p>
 
 *Source: ml-ops.org tutorial on automated ML pipelines*
 
