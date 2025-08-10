@@ -46,7 +46,7 @@ This diagram shows the key steps of an MLOps pipeline:
 ### 2. CI/CD and ML Pipeline Automation
 
 <p align="center">
-  <img src="assets/mlops-ci-cd-pipeline.svg" alt="CI/CD and ML Pipeline" width="600"/>
+  <img src="https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/mlops-ci-cd-pipeline.svg" alt="CI/CD and ML Pipeline" width="600"/>
 </p>
 
 *Source: Google Cloud - MLOps: Continuous delivery and automation pipelines*
@@ -61,7 +61,7 @@ Here you can see how MLOps brings together code, data, and infrastructure:
 ### 3. MLOps with Feature Store and Pipeline
 
 <p align="center">
-  <img src="assets/mlops-feature-pipeline.png" alt="MLOps Feature Pipeline" width="600"/>
+  <img src="https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/mlops-feature-pipeline.png" alt="MLOps Feature Pipeline" width="600"/>
 </p>
 
 *Source: Futurice - MLOps architecture overview with feature storage*
@@ -78,7 +78,7 @@ A **feature store** is a special database for storing, reusing, and serving inpu
 ### 4. End-to-End MLOps Architecture
 
 <p align="center">
-  <img src="assets/end-to-end-mlops-architecture.png" alt="End-to-End MLOps Architecture" width="600"/>
+  <img src="https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/end-to-end-mlops-architecture.png" alt="End-to-End MLOps Architecture" width="600"/>
 </p>
 
 *Source: Analytics Vidhya / Valohai - Full MLOps workflow*
