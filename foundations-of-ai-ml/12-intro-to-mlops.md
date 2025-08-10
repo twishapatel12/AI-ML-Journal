@@ -6,79 +6,97 @@
 
 ## Introduction
 
-Machine Learning Operations (**MLOps**) bridges the gap between developing ML models and deploying them reliably in real-world systems. It blends best practices from **machine learning**, **DevOps**, and **software engineering** to automate, monitor, and manage ML workflows.
+Machine Learning Operations (**MLOps**) is the field that helps turn machine learning prototypes into reliable, scalable products.  
+MLOps brings together best practices from machine learning, DevOps, and software engineering to automate, monitor, and manage ML systems.
 
-Effective MLOps ensures that ML models are scalable, maintainable, and aligned with evolving data and business needs.
-
----
-
-## What Problems Does MLOps Solve?
-
-- Scaling models from notebooks to production environments
-- Versioning of code, data, and models
-- Automating pipelines for data, training, and evaluation
-- Monitoring models in production for drift, bias, or failure
-- Establishing CI/CD for model lifecycle
+Well-managed MLOps means your models are reproducible, maintainable, and stay accurate even as data or business needs change.
 
 ---
 
-## Real-World Diagrams of MLOps Workflows
+## Why MLOps Matters
 
+- Moves ML models from research to real-world applications
+- Automates data and model pipelines for speed and reliability
+- Tracks experiments, models, and data for reproducibility
+- Enables continuous monitoring and improvement of models
+- Supports collaboration between data scientists, engineers, and operations teams
 
-::contentReference[oaicite:1]{index=1}
+---
 
+## The MLOps Lifecycle: Industry-Standard Visuals
 
-1. **Simplified MLOps Pipeline**  
-   Visualizes experiment workflows, automated pipelines, CI/CD stages, and prediction serving in an MLOps system :contentReference[oaicite:2]{index=2}.
+Below are examples of real MLOps lifecycles and workflows used in production environments:
 
-2. **Automated MLOps Pipeline Overview**  
-   Highlights stages like data preparation, model training, validation, and governance within a modular pipeline :contentReference[oaicite:3]{index=3}.
+### 1. Simplified MLOps Pipeline
 
-3. **MLOps Phases (ML + Dev + Ops)**  
-   Illustrates how machine learning, development, and operations integrate in ML workflows with tools like Git, CI platforms, and model registries :contentReference[oaicite:4]{index=4}.
+Visualizes experiment workflows, automated pipelines, CI/CD stages, and prediction serving in an MLOps system.
 
-4. **Azure MLOps Deployment Flow**  
-   Shows CI (build & test), CD (deploy pipelines), and model-serving steps in Azure’s MLOps architecture :contentReference[oaicite:5]{index=5}.
+![Simplified MLOps Pipeline](https://ml-ops.org/images/mlops-principles-diagram.png)  
+*Source: [ml-ops.org](https://ml-ops.org/content/mlops-principles)*
 
-These industry-standard visuals reinforce how MLOps streamlines each step—from data to deployment and monitoring.
+---
+
+### 2. Automated MLOps Pipeline Overview
+
+Highlights stages like data preparation, model training, validation, and governance within a modular pipeline.
+
+![Automated MLOps Pipeline](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*yqjLfVYn2YQ8-67FQJGsTw.png)  
+*Source: [Medium - How to Build an MLOps Pipeline](https://medium.com/@odsc/how-to-build-mlops-pipeline-2ac2fd7b97a3)*
+
+---
+
+### 3. MLOps Phases (ML + Dev + Ops)
+
+Shows the integration of machine learning, development, and operations using tools like Git, CI platforms, and model registries.
+
+![MLOps Phases](https://www.baeldung.com/wp-content/uploads/sites/4/2022/03/mlops-workflow.png)  
+*Source: [Baeldung](https://www.baeldung.com/ops/machine-learning-ops)*
+
+---
+
+### 4. Azure MLOps Deployment Flow
+
+Displays the CI (build & test), CD (deploy pipelines), and model-serving steps in a robust Azure MLOps architecture.
+
+![Azure MLOps Deployment Flow](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/media/guide/machine-learning-operations-v2/mlops-architecture-v2.svg)  
+*Source: [Microsoft Learn](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/machine-learning-operations-v2)*
 
 ---
 
 ## Core Components of MLOps
 
-1. **Version Control**: Use Git for code, DVC for datasets and model checkpoints.
-2. **Data Pipelines**: Automate ingestion, cleaning, and transformation.
-3. **Experiment Tracking**: Log parameters, metrics, and artifacts (e.g. MLflow, Weights & Biases).
-4. **Model Registry**: Centralized model versioning and metadata storage.
-5. **Deployment**: Package models into REST APIs or serve via containers and platforms (Docker, Flask, Kubernetes, FastAPI).
-6. **Monitoring**: Track model metrics, detect drift, manage rollback or retraining.
-7. **CI/CD for ML**: Automated testing & deployment of models like software features.
+1. **Version Control:** Track code, data, and models (Git, DVC).
+2. **Data Pipelines:** Automate ingestion, cleaning, and transformation (Airflow, Prefect).
+3. **Experiment Tracking:** Log parameters, metrics, and artifacts (MLflow, Weights & Biases).
+4. **Model Registry:** Store and version models centrally.
+5. **Deployment:** Serve models via APIs, containers, or cloud platforms (Docker, FastAPI, TensorFlow Serving).
+6. **Monitoring:** Track performance, drift, and data issues (Prometheus, Grafana).
+7. **CI/CD for ML:** Automate testing and deployment for all ML artifacts.
 
 ---
 
 ## Example: Minimal Model Serving with FastAPI
 
 ```python
-# file: serve_model.py
 from fastapi import FastAPI
 import joblib
 import numpy as np
 
 app = FastAPI()
-model = joblib.load('house_price_model.pkl')
+model = joblib.load('model.pkl')  # Pretrained model
 
 @app.get("/predict")
 def predict(size: float, rooms: int):
-    features = np.array([[size, rooms]])
-    price = model.predict(features)
-    return {"predicted_price": float(price[0])}
+    X = np.array([[size, rooms]])
+    pred = model.predict(X)
+    return {"predicted_price": float(pred[0])}
 ````
 
-This simple endpoint demonstrates how a trained model can be served and accessed via REST.
+*A basic REST API for serving predictions from a trained ML model.*
 
 ---
 
-## MLOps Tools Ecosystem
+## Common MLOps Tools
 
 | Pipeline Stage      | Example Tools & Libraries                              |
 | ------------------- | ------------------------------------------------------ |
@@ -92,12 +110,23 @@ This simple endpoint demonstrates how a trained model can be served and accessed
 
 ---
 
+## Best Practices in MLOps
+
+* Automate as much as possible (pipelines, deployment, monitoring)
+* Track code, data, and model versions
+* Use containers for reproducible environments
+* Monitor models in production for drift and errors
+* Collaborate across teams (data, engineering, ops)
+
+---
+
 ## Further Reading & References
 
-* [GeeksforGeeks: MLOps Pipeline Components](https://www.geeksforgeeks.org/machine-learning/mlops-pipeline-implementing-efficient-machine-learning-operations/) ([GeeksforGeeks][1], [ML Ops][2])
-* [Baeldung: Navigating MLOps Workflow](https://www.baeldung.com/ops/machine-learning-ops) ([baeldung.com][3])
-* [Google Cloud: CI/CD and Continuous Training in MLOps](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning) ([Google Cloud][4])
-* [Azure MLOps v2 Architecture Components](https://github.com/Azure/mlops-v2/blob/main/documentation/architecture/README.md) ([GitHub][5])
+* [ml-ops.org: MLOps Principles](https://ml-ops.org/content/mlops-principles)
+* [Medium: How to Build an MLOps Pipeline](https://medium.com/@odsc/how-to-build-mlops-pipeline-2ac2fd7b97a3)
+* [Baeldung: Navigating MLOps Workflow](https://www.baeldung.com/ops/machine-learning-ops)
+* [Microsoft Learn: Azure MLOps Architecture](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/machine-learning-operations-v2)
+* [Google Cloud: CI/CD and Continuous Training in MLOps](https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning)
 
 ---
 
@@ -109,11 +138,3 @@ This simple endpoint demonstrates how a trained model can be served and accessed
   <br>
   <a href="https://github.com/twishapatel12/AI-ML-Journal">GitHub Repo</a>
 </p>
-
----
-
-[1]: https://www.geeksforgeeks.org/machine-learning/mlops-pipeline-implementing-efficient-machine-learning-operations/?utm_source=chatgpt.com "MLOps Pipeline: Implementing Efficient Machine Learning Operations"
-[2]: https://ml-ops.org/content/mlops-principles?utm_source=chatgpt.com "MLOps Principles"
-[3]: https://www.baeldung.com/ops/machine-learning-ops?utm_source=chatgpt.com "Navigating MLOps: Key Strategies for Effective Machine ... - Baeldung"
-[4]: https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning?utm_source=chatgpt.com "MLOps: Continuous delivery and automation pipelines in machine learning ..."
-[5]: https://github.com/Azure/mlops-v2/blob/main/documentation/architecture/README.md?utm_source=chatgpt.com "mlops-v2/documentation/architecture/README.md at main · Azure ... - GitHub"
