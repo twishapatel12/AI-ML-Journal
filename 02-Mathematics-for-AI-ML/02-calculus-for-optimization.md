@@ -121,7 +121,7 @@ print("Optimal w found:", w)
 ## Visual: Gradient Descent Illustration
 
 <p align="center">
-  <img src="https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/gradient-descent-curve.png" alt="Gradient Descent Curve" width="480"/>
+  <img src="https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/gradient-descent-curve.png" alt="Gradient Descent Curve" width="400"/>
 </p>
 
 *Shows the loss function curve, the starting point, and arrows illustrating the steps of gradient descent down the slope to the minimum.*
