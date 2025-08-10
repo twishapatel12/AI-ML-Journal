@@ -1,10 +1,3 @@
-Here is a detailed, technical-yet-simple markdown file for:
-
-## `14-recommendation-systems-basics.md`
-
----
-
-````markdown
 ![Banner](https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/aiml-banner.png)
 
 # Recommendation Systems: The Basics
@@ -183,30 +176,3 @@ This helps reduce their individual weaknesses and gives more robust recommendati
   <br>
   <a href="https://github.com/twishapatel12/AI-ML-Journal">GitHub Repo</a>
 </p>
-
----
-
-## Image Generation Prompts
-
-**recommendation-types-diagram.png**
-*Prompt:*
-
-> Create a simple infographic showing “Types of Recommendation Systems.”
-> Include labeled sections for: Content-Based Filtering (items matched to user profile), Collaborative Filtering (users/items grouped by similarity), and Hybrid Methods (combination of both), with arrows or icons showing flow of recommendations.
-
-**netflix-recommendation-architecture.png**
-*Prompt:*
-
-> Draw a detailed diagram showing how Netflix builds recommendations.
-> Start with user profiles, past ratings, and movie metadata as inputs; show data flow through collaborative, content-based, and context-aware algorithms; then combine outputs to generate personalized rows on the Netflix homepage. Use red, white, and dark grey for Netflix branding.
-
-```
-
----
-
-**Instructions:**  
-- Download or generate each image, save to `assets/`, and use the provided filenames.  
-- Adjust image links if you change filenames.
-
-Let me know if you want further expansion, more advanced examples, or deeper coverage of matrix factorization and deep learning recommenders!
-```
