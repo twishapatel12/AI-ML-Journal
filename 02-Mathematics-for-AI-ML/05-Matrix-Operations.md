@@ -136,10 +136,6 @@ C = np.dot(A, B)
 print("A * B =\n", C)
 ```
 
-<p align="center">
-  <img src="https://github.com/twishapatel12/AI-ML-Journal/blob/main/assets/matrix-multiplication.png" alt="Matrix Multiplication Example" width="420"/>
-</p>
-
 ---
 
 ## 5. Identity Matrix
