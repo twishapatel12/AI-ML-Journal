@@ -20,13 +20,13 @@ A **matrix** is a rectangular array of numbers, arranged in rows and columns.
 Example:  
 A 3x2 matrix (3 rows, 2 columns):
 
-\[
+$$
 A = \begin{bmatrix}
 1 & 2 \\
 3 & 4 \\
 5 & 6 \\
 \end{bmatrix}
-\]
+$$
 
 **In Python (NumPy):**
 
