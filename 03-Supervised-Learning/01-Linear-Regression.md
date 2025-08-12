@@ -59,6 +59,7 @@ $$
   $$
   MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
   $$ 
+  
 - Linear regression uses calculus (optimization) to find the slope and intercept that minimize MSE.
 
 ---
