@@ -56,9 +56,9 @@ $$
 - The difference for each point is called the **residual** (error).
 - It usually uses **mean squared error (MSE)** as the measure of error:
 
-  $$ 
-  MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
-  $$ 
+$$ 
+MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
+$$ 
 
 - Linear regression uses calculus (optimization) to find the slope and intercept that minimize MSE.
 
