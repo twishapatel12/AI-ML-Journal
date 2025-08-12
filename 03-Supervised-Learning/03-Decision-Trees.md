@@ -63,7 +63,7 @@ $$
 Gini = 1 - \sum_{i=1}^{C} p_i^2
 $$
 
-where \( p_i \) is the proportion of examples in class \( i \).
+where $p_i$ is the proportion of examples in class $i$.
 
 ---
 
