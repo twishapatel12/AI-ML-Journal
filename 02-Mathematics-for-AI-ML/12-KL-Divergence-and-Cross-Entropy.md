@@ -91,9 +91,9 @@ $$
 
 ### KL Divergence Calculation
 
-\[
+$$
 D_{KL}(P || Q) = 0 \times \log(0/0.2) + 1 \times \log(1/0.7) + 0 \times \log(0/0.1) = \log(1/0.7) \approx 0.357
-\]
+$$
 
 **For one-hot labels, cross-entropy and KL divergence are the same.**
 
