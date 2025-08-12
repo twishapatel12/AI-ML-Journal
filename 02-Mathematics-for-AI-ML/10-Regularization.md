@@ -26,14 +26,14 @@ Regularization helps by making the model “simpler” and discouraging it from 
 ### 1. L1 Regularization (Lasso)
 
 - Adds a penalty equal to the **absolute value** of the weights.
-- The penalty term is \( \lambda \sum_{j} |w_j| \), where \( w_j \) are the weights and \( \lambda \) controls the strength.
+- The penalty term is $\lambda \sum_{j} |w_j|$, where $w_j$ are the weights and $\lambda$ controls the strength.
 - Encourages some weights to become exactly zero (feature selection).
 
 **Mathematical Form (for linear regression):**
 
-\[
+$$
 \text{Loss} = \text{MSE} + \lambda \sum_{j} |w_j|
-\]
+$$
 
 **Code Example:**
 
