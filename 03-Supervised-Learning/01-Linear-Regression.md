@@ -23,18 +23,18 @@ Linear regression tries to fit a straight line (or plane/hyperplane in higher di
 ## How Does Linear Regression Work?
 
 **Simple linear regression** fits a line:
-$$
+\[
 y = mx + c
-$$
+\]
 - $y$: predicted value (target)
 - $x$: input feature
 - $m$: slope (how much y changes as x changes)
 - $c$: intercept (value of y when x = 0)
 
 **Multiple linear regression** (more than one input):
-$$
+\[
 y = w_1 x_1 + w_2 x_2 + \dots + w_n x_n + c
-$$
+\]
 
 ---
 
@@ -53,9 +53,9 @@ $$
 - It finds the line (or plane) that **minimizes the difference** between the actual and predicted values.
 - The difference for each point is called the **residual** (error).
 - It usually uses **mean squared error (MSE)** as the measure of error:
-  $$
+  \[
   MSE = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2
-  $$
+  \]
 - Linear regression uses calculus (optimization) to find the slope and intercept that minimize MSE.
 
 ---
