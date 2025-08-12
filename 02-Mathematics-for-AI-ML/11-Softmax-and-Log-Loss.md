@@ -22,14 +22,14 @@ Softmax is a function that takes a vector of numbers (logits) and “squashes”
 
 ### Softmax Formula
 
-Given a vector of logits \( z = [z_1, z_2, ..., z_K] \), softmax outputs \( p_i \):
+Given a vector of logits $z = [z_1, z_2, ..., z_K]$, softmax outputs $p_i$:
 
-\[
+$$
 p_i = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}
-\]
+$$
 
-- \( p_i \) is the predicted probability of class \( i \).
-- All \( p_i \) values are between 0 and 1, and sum to 1.
+- $p_i$ is the predicted probability of class $i$.
+- All $p_i$ values are between 0 and 1, and sum to 1.
 
 ---
 
