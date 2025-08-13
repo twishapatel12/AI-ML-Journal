@@ -54,9 +54,9 @@ Where:
 
 Anomaly score for a point $x$:
 
-$
+$$
 s(x, n) = 2^{-\frac{E(h(x))}{c(n)}}
-$
+$$
 
 Where:
 - $E(h(x))$ = average path length for $x$ over all trees.
