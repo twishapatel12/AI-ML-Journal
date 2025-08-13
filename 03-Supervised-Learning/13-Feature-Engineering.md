@@ -32,7 +32,7 @@ The goal is to:
 Creating new features from existing ones to better represent the underlying patterns.
 
 Examples:
-- **Polynomial features:** \( x^2, x^3 \) to capture non-linear relationships.
+- **Polynomial features:** $x^2, x^3$ to capture non-linear relationships.
 - **Ratios:** `total_sales / num_customers`.
 - **Date/time parts:** Extracting `year`, `month`, `day`, `day_of_week` from a timestamp.
 
@@ -50,17 +50,17 @@ Changing the scale or distribution of features to help algorithms perform better
 
 * **Normalization (Min-Max Scaling):**
 
-  $$
-  x' = \frac{x - \min(x)}{\max(x) - \min(x)}
-  $$
+$$
+x' = \frac{x - \min(x)}{\max(x) - \min(x)}
+$$
 
   Useful for algorithms like KNN, SVM.
 
 * **Standardization (Z-score Scaling):**
 
-  $$
-  x' = \frac{x - \mu}{\sigma}
-  $$
+$$
+x' = \frac{x - \mu}{\sigma}
+$$
 
   Useful for linear models and gradient descent.
 
