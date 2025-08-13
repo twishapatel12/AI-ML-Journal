@@ -41,9 +41,9 @@ $$
 w(t+1) = w(t) + \alpha(t) \cdot h_{\text{BMU}}(t) \cdot (x - w(t))
 $$
 
-     Where:
-     - $\alpha(t)$ = learning rate (decreases over time)
-     - $h_{\text{BMU}}(t)$ = neighborhood function (larger at start, shrinks over time)
+Where:
+- $\alpha(t)$ = learning rate (decreases over time)
+- $h_{\text{BMU}}(t)$ = neighborhood function (larger at start, shrinks over time)
 
 5. **Repeat**  
    - Continue until convergence (weights no longer change significantly).
