@@ -28,20 +28,20 @@ Without backpropagation, deep learning would not be possible.
 
 ### 1. Forward Pass
 
-For neuron \( j \) in layer \( l \):
+For neuron $j$ in layer $l$:
 
-\[
+$$
 z_j^{(l)} = \sum_i w_{ij}^{(l)} a_i^{(l-1)} + b_j^{(l)}
-\]
+$$
 
-\[
+$$
 a_j^{(l)} = f(z_j^{(l)})
-\]
+$$
 
 Where:
-- \( w_{ij}^{(l)} \) = weight  
-- \( b_j^{(l)} \) = bias  
-- \( f \) = activation function  
+- $w_{ij}^{(l)}$ = weight  
+- $b_j^{(l)}$ = bias  
+- $f$ = activation function  
 
 ---
 
@@ -49,9 +49,9 @@ Where:
 
 For example, Mean Squared Error (MSE):
 
-\[
+$$
 L = \frac{1}{2} \sum (y - \hat{y})^2
-\]
+$$
 
 ---
 
@@ -59,39 +59,39 @@ L = \frac{1}{2} \sum (y - \hat{y})^2
 
 Using the chain rule:
 
-\[
+$$
 \frac{\partial L}{\partial w_{ij}^{(l)}} = \delta_j^{(l)} a_i^{(l-1)}
-\]
+$$
 
 Where the error term is:
 
-\[
+$$
 \delta_j^{(l)} = \frac{\partial L}{\partial z_j^{(l)}}
-\]
+$$
 
 - For the output layer:
-\[
+$$
 \delta^{(L)} = (a^{(L)} - y) \cdot f'(z^{(L)})
-\]
+$$
 
 - For hidden layers:
-\[
+$$
 \delta^{(l)} = \left( \sum_k w_{jk}^{(l+1)} \delta_k^{(l+1)} \right) \cdot f'(z^{(l)})
-\]
+$$
 
 ---
 
 ### 4. Weight Update
 
-\[
+$$
 w_{ij}^{(l)} \leftarrow w_{ij}^{(l)} - \eta \cdot \frac{\partial L}{\partial w_{ij}^{(l)}}
-\]
+$$
 
-\[
+$$
 b_j^{(l)} \leftarrow b_j^{(l)} - \eta \cdot \delta_j^{(l)}
-\]
+$$
 
-Where \( \eta \) is the **learning rate**.
+Where $\eta$ is the **learning rate**.
 
 ---
 
@@ -187,19 +187,3 @@ print("Loss:", loss.item())
   <br>
   <a href="https://github.com/twishapatel12/AI-ML-Journal">GitHub Repo</a>
 </p>
-
----
-
-## Image Generation Prompt
-
-**backpropagation-concept.png**
-*Prompt:*
-
-> Draw a diagram of a simple 3-layer neural network. Show forward propagation with arrows (input → hidden → output) in one color, and backpropagation of errors with arrows going backward in another color. Label weight updates and gradients.
-
-```
-
----
-
-Would you like me to continue with **"04-Optimizers.md"** next in the Deep Learning section? It connects directly with backpropagation since optimizers update weights.
-```
