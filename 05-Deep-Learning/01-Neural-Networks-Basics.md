@@ -37,20 +37,20 @@ A typical **feedforward neural network** has:
 
 Each neuron performs:
 
-\[
+$$
 z = \sum_{i=1}^{n} w_i x_i + b
-\]
+$$
 
-\[
+$$
 a = f(z)
-\]
+$$
 
 Where:
-- \( x_i \): input features  
-- \( w_i \): weights  
-- \( b \): bias  
-- \( f \): activation function (e.g., sigmoid, ReLU)  
-- \( a \): output of the neuron  
+- $x_i$: input features  
+- $w_i$: weights  
+- $b$: bias  
+- $f$: activation function (e.g., sigmoid, ReLU)  
+- $a$: output of the neuron  
 
 ---
 
