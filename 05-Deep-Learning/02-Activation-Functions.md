@@ -26,9 +26,9 @@ Non-linearity allows neural networks to learn **complex patterns** and relations
 
 ### 1. Sigmoid
 
-\[
+$$
 \sigma(x) = \frac{1}{1 + e^{-x}}
-\]
+$$
 
 - Outputs values between **0 and 1**.
 - Used for probabilities in binary classification.
