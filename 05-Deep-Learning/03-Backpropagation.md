@@ -69,12 +69,12 @@ $$
 \delta_j^{(l)} = \frac{\partial L}{\partial z_j^{(l)}}
 $$
 
-- For the output layer:
+- For the output layer: 
 $$
 \delta^{(L)} = (a^{(L)} - y) \cdot f'(z^{(L)})
 $$
 
-- For hidden layers:
+- For hidden layers: 
 $$
 \delta^{(l)} = \left( \sum_k w_{jk}^{(l+1)} \delta_k^{(l+1)} \right) \cdot f'(z^{(l)})
 $$
